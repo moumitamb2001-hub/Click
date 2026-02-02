@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Valentine 💖</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: 'Comic Sans MS', cursive;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #fff;
+      margin-bottom: 30px;
+    }
+
+    button {
+      font-size: 1.2rem;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    #yesBtn {
+      background-color: #ff4d6d;
+      color: white;
+      margin-right: 20px;
+    }
+
+    #noBtn {
+      background-color: #555;
+      color: white;
+      position: absolute;
+    }
+
+    .love {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .love img {
+      width: 250px;
+      margin-bottom: 20px;
+    }
+
+    .love h2 {
+      color: white;
+      font-size: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container" id="questionBox">
+    <h1>Will you be my Valentine? 💕</h1>
+    <button id="yesBtn">YES 💖</button>
+    <button id="noBtn">NO 💔</button>
+  </div>
+
+  <div class="love" id="loveBox">
+    <img src="https://i.pinimg.com/originals/62/d5/78/62d57853e9768595d803affdb44e6a35.gif" alt="Love GIF">
+    <h2>Love you Potka Kumro Pupu!💘</h2>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+    const questionBox = document.getElementById("questionBox");
+    const loveBox = document.getElementById("loveBox");
+
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 50);
+
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+      noBtn.style.transform = `rotate(${Math.random() * 360}deg)`;
+    });
+
+    yesBtn.addEventListener("click", () => {
+      questionBox.style.display = "none";
+      loveBox.style.display = "flex";
+    });
+  </script>
+
+</body>
+</html>
